@@ -42,7 +42,7 @@ menu_principal() {
             /root/FibersTV/usuarios/cuentas.sh
             ;;
         2) 
-            /root/FibersTV/conexiones/conexiones.sh
+            ./conexiones.sh
             ;;
         3) 
             /root/FibersTV/herramientas/herramientas.sh
