@@ -44,11 +44,11 @@ menu_principal() {
 
     case $opcion in
         1) chmod +x cuentas/cuentas.sh && ./cuentas/cuentas.sh ;;
-        2) ./conexiones.sh ;;
-        3) ./herramientas.sh ;;
-        4) ./backup.sh ;;
-        5) ./actualizar.sh ;;
-        6) ./desinstalar.sh ;;
+        2) chmod +x conexiones/conexiones.sh && ./conexiones/conexiones.sh ;;
+        3) chmod +x herramientas/herramientas.sh && ./herramientas/herramientas.sh ;;
+        4) chmod +x backup/backup.sh && ./backup/backup.sh ;;
+        5) chmod +x actualizar/actualizar.sh && ./actualizar/actualizar.sh ;;
+        6) chmod +x desinstalar/desinstalar.sh && ./desinstalar/desinstalar.sh ;;
         0) exit ;;
         *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
     esac
