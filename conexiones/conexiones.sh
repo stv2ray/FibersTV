@@ -46,21 +46,21 @@ menu_conexiones() {
         read opcion
 
         case $opcion in
-    0) break ;;  # Salir del bucle para volver al menú principal
-    1) chmod +x conexiones/dropbear/dropbear.sh && ./conexiones/dropbear/dropbear.sh ;;
-    2) chmod +x conexiones/socks_python/socks_python.sh && ./conexiones/socks_python/socks_python.sh ;;
-    3) chmod +x conexiones/ssl/ssl.sh && ./conexiones/ssl/ssl.sh ;;
-    4) chmod +x conexiones/v2ray/v2ray.sh && ./conexiones/v2ray/v2ray.sh ;;
-    5) chmod +x conexiones/websocket/websocket.sh && ./conexiones/websocket/websocket.sh ;;
-    6) chmod +x conexiones/badvpn_udp/badvpn_udp.sh && ./conexiones/badvpn_udp/badvpn_udp.sh ;;
-    7) chmod +x conexiones/squid/squid.sh && ./conexiones/squid/squid.sh ;;
-    8) chmod +x conexiones/openvpn/openvpn.sh && ./conexiones/openvpn/openvpn.sh ;;
-    9) chmod +x conexiones/slowdns/slowdns.sh && ./conexiones/slowdns/slowdns.sh ;;
-    10) chmod +x conexiones/wireguard/wireguard.sh && ./conexiones/wireguard/wireguard.sh ;;
-    11) chmod +x conexiones/udp/udp.sh && ./conexiones/udp/udp.sh ;;
-    12) chmod +x conexiones/psiphon/psiphon.sh && ./conexiones/psiphon/psiphon.sh ;;
-    13) chmod +x conexiones/ws_epro/ws_epro.sh && ./conexiones/ws_epro/ws_epro.sh ;;
-    *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
+            0) break ;;  # Salir del bucle para volver al menú principal
+            1) chmod +x /root/FibersTV/conexiones/dropbear/dropbear.sh && /root/FibersTV/conexiones/dropbear/dropbear.sh ;;
+            2) chmod +x /root/FibersTV/conexiones/socks_python/socks_python.sh && /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
+            3) chmod +x /root/FibersTV/conexiones/ssl/ssl.sh && /root/FibersTV/conexiones/ssl/ssl.sh ;;
+            4) chmod +x /root/FibersTV/conexiones/v2ray/v2ray.sh && /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
+            5) chmod +x /root/FibersTV/conexiones/websocket/websocket.sh && /root/FibersTV/conexiones/websocket/websocket.sh ;;
+            6) chmod +x /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh && /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh ;;
+            7) chmod +x /root/FibersTV/conexiones/squid/squid.sh && /root/FibersTV/conexiones/squid/squid.sh ;;
+            8) chmod +x /root/FibersTV/conexiones/openvpn/openvpn.sh && /root/FibersTV/conexiones/openvpn/openvpn.sh ;;
+            9) chmod +x /root/FibersTV/conexiones/slowdns/slowdns.sh && /root/FibersTV/conexiones/slowdns/slowdns.sh ;;
+            10) chmod +x /root/FibersTV/conexiones/wireguard/wireguard.sh && /root/FibersTV/conexiones/wireguard/wireguard.sh ;;
+            11) chmod +x /root/FibersTV/conexiones/udp/udp.sh && /root/FibersTV/conexiones/udp/udp.sh ;;
+            12) chmod +x /root/FibersTV/conexiones/psiphon/psiphon.sh && /root/FibersTV/conexiones/psiphon/psiphon.sh ;;
+            13) chmod +x /root/FibersTV/conexiones/ws_epro/ws_epro.sh && /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
+            *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
         esac
     done
 }
