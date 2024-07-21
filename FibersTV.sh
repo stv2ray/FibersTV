@@ -2,7 +2,7 @@
 
 # Definir colores
 COL_BANNER1="\e[38;5;69m"   # #6F4BFO
-COL_BANNER2="\e[38;5;123m"  # #CED4F5
+COL_BANNER2="\e[38;5;117m"  # #CED4F5
 COL_BANNER3="\e[38;5;33m"   # #006BFA
 COL_BANNER4="\e[38;5;119m"  # #EAFFF8
 COL_HEADER="\e[38;5;69m"    # #6F4BFO
