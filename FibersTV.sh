@@ -1,39 +1,46 @@
 #!/bin/bash
 
 # Definir colores
-COL_BANNER="#67CAD2"
-COL_HEADER="#00BE92"
-COL_MENU="#3CF490"
-COL_TEXT="#FFFFFF"
-COL_ERROR="#FF6347"
+COL_BANNER1="\e[38;5;231m"  # Blanco
+COL_BANNER2="\e[38;5;225m"  # Rosa claro
+COL_BANNER3="\e[38;5;219m"  # Rosa
+COL_BANNER4="\e[38;5;213m"  # Rosa oscuro
+COL_BANNER5="\e[38;5;207m"  # Magenta claro
+COL_HEADER="\e[38;5;82m"    # Verde claro
+COL_MENU="\e[38;5;82m"      # Verde claro
+COL_TEXT="\e[38;5;82m"      # Verde claro
+COL_ERROR="\e[38;5;196m"    # Rojo
+NC='\e[0m'                  # Sin color
 
-# Función para mostrar el banner
+# Función para mostrar el banner con degradado
 mostrar_banner() {
     clear
-    echo -e "\e[48;5;39m\e[97m**********************************************\e[0m"
-    echo -e "\e[48;5;39m\e[97m*             \e[38;5;82mFIBERSTV.COM\e[0m\e[48;5;39m\e[97m*\e[0m"
-    echo -e "\e[48;5;39m\e[97m**********************************************\e[0m"
+    echo -e "${COL_BANNER1}********************************${NC}"
+    echo -e "${COL_BANNER2}*        ${COL_BANNER1}FIBERSTV.COM${COL_BANNER2}         *${NC}"
+    echo -e "${COL_BANNER3}********************************${NC}"
+    echo -e "${COL_BANNER4}********************************${NC}"
+    echo -e "${COL_BANNER5}********************************${NC}"
 }
 
 # Función para mostrar la información del sistema
 mostrar_info_sistema() {
-    echo -e "Memoria RAM: \e[38;5;82m$(free -h | grep Mem | awk '{print $3 "/" $2}')\e[0m"
-    echo -e "CPU: \e[38;5;82m$(lscpu | grep 'Model name' | awk -F: '{print $2}' | xargs)\e[0m"
-    echo -e "Fecha y Hora: \e[38;5;82m$(date)\e[0m"
+    echo -e "Memoria RAM: ${COL_TEXT}$(free -h | grep Mem | awk '{print $3 "/" $2}')${NC}"
+    echo -e "CPU: ${COL_TEXT}$(lscpu | grep 'Model name' | awk -F: '{print $2}' | xargs)${NC}"
+    echo -e "Fecha y Hora: ${COL_TEXT}$(date)${NC}"
 }
 
 # Función para mostrar el menú principal
 menu_principal() {
     mostrar_banner
     mostrar_info_sistema
-    echo -e "\e[38;5;39mPANEL DE CONTROL\e[0m"
-    echo -e "1) \e[38;5;33mCUENTAS\e[0m"
-    echo -e "2) \e[38;5;33mCONEXIONES\e[0m"
-    echo -e "3) \e[38;5;33mHERRAMIENTAS\e[0m"
-    echo -e "4) \e[38;5;33mBACKUP\e[0m"
-    echo -e "5) \e[38;5;33mACTUALIZAR\e[0m"
-    echo -e "6) \e[38;5;33mDESINSTALAR\e[0m"
-    echo -e "0) \e[38;5;33mSALIR DEL SCRIPT\e[0m"
+    echo -e "${COL_HEADER}PANEL DE CONTROL${NC}"
+    echo -e "1) ${COL_MENU}CUENTAS${NC}"
+    echo -e "2) ${COL_MENU}CONEXIONES${NC}"
+    echo -e "3) ${COL_MENU}HERRAMIENTAS${NC}"
+    echo -e "4) ${COL_MENU}BACKUP${NC}"
+    echo -e "5) ${COL_MENU}ACTUALIZAR${NC}"
+    echo -e "6) ${COL_MENU}DESINSTALAR${NC}"
+    echo -e "0) ${COL_MENU}SALIR DEL SCRIPT${NC}"
     echo -n "Seleccione una opción: "
     read opcion
 
@@ -45,7 +52,7 @@ menu_principal() {
         5) ./actualizar.sh ;;
         6) ./desinstalar.sh ;;
         0) exit ;;
-        *) echo -e "\e[38;5;9mOpción inválida\e[0m"; sleep 2 ;;
+        *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
     esac
 }
 
