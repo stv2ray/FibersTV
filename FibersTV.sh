@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# Definir colores
+# Definir colores para el degradado
 COL_BANNER1="\e[38;5;231m"  # Blanco
-COL_BANNER2="\e[38;5;225m"  # Rosa claro
-COL_BANNER3="\e[38;5;219m"  # Rosa
-COL_BANNER4="\e[38;5;213m"  # Rosa oscuro
-COL_BANNER5="\e[38;5;207m"  # Magenta claro
+COL_BANNER2="\e[38;5;159m"  # Cian
+COL_BANNER3="\e[38;5;123m"  # Azul
+COL_BANNER4="\e[38;5;87m"   # Azul cristalino
+COL_BANNER5="\e[38;5;51m"   # Verde cristalino
+COL_BANNER6="\e[38;5;47m"   # Verde más oscuro
+COL_BANNER7="\e[38;5;22m"   # Verde oscuro
 COL_HEADER="\e[38;5;82m"    # Verde claro
 COL_MENU="\e[38;5;82m"      # Verde claro
 COL_TEXT="\e[38;5;82m"      # Verde claro
@@ -20,6 +22,8 @@ mostrar_banner() {
     echo -e "${COL_BANNER3}********************************${NC}"
     echo -e "${COL_BANNER4}********************************${NC}"
     echo -e "${COL_BANNER5}********************************${NC}"
+    echo -e "${COL_BANNER6}********************************${NC}"
+    echo -e "${COL_BANNER7}********************************${NC}"
 }
 
 # Función para mostrar la información del sistema
