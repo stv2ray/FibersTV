@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Incluir el script principal para acceder a la función menu_principal
-source ./FibersTV.sh
-
 # Definición de colores
 HEADER_COLOR='\e[38;5;69m'  # #6F4BFO
 OPTION_COLOR='\e[38;5;69m'  # #6F4BFO
@@ -43,7 +40,7 @@ menu_conexiones() {
         read opcion
 
         case $opcion in
-            0) menu_principal ;;  # Asegúrate de tener esta función definida en tu menú principal
+            0) break ;;  # Salir del bucle para volver al menú principal
             1) ./dropbear.sh ;;
             2) ./socks_python.sh ;;
             3) ./ssl.sh ;;
