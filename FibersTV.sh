@@ -49,7 +49,5 @@ menu_principal() {
     esac
 }
 
-# Bucle para mantener el menú principal activo
-while true; do
-    menu_principal
-done
+# Mostrar el menú principale
+menu_principal
