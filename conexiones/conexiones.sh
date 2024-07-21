@@ -46,7 +46,7 @@ menu_conexiones() {
 
     case $opcion in
         0) exit 0 ;;  # Salir del script
-        1) chmod +x /root/FibersTV/conexiones/dropbear.sh && ./dropbear.sh ;;
+        1) chmod +x /root/FibersTV/conexiones/dropbear.sh && /root/FibersTV/conexiones/dropbear.sh ;;
         2) chmod +x /root/FibersTV/conexiones/socks_python/socks_python.sh && /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
         3) chmod +x /root/FibersTV/conexiones/ssl/ssl.sh && /root/FibersTV/conexiones/ssl/ssl.sh ;;
         4) chmod +x /root/FibersTV/conexiones/v2ray/v2ray.sh && /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
@@ -61,6 +61,9 @@ menu_conexiones() {
         13) chmod +x /root/FibersTV/conexiones/ws_epro/ws_epro.sh && /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
         *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
     esac
+
+    # Volver al menú principal después de ejecutar la opción
+    menu_conexiones
 }
 
 # Llamar al menú de conexiones
