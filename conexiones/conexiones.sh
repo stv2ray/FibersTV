@@ -17,6 +17,11 @@ mostrar_puertos() {
     ./puertos.sh
 }
 
+# Función para dar permisos de ejecución a todos los protocolos
+preparar_protocolos() {
+    ~/FibersTV/conexiones/chmod_protocol.sh
+}
+
 # Función para mostrar el menú de conexiones
 menu_conexiones() {
     clear
@@ -26,19 +31,20 @@ menu_conexiones() {
     mostrar_puertos
     echo
     echo -e "${COL_BANNER2}         MENU DE PROTOCOLOS          ${NC}"
-    echo -e "${COL_HEADER}  [1] > DROPBEAR                     ${NC}"
-    echo -e "${COL_HEADER}  [2] > SOCKS PYTHON                 ${NC}"
-    echo -e "${COL_HEADER}  [3] > SSL                          ${NC}"
-    echo -e "${COL_HEADER}  [4] > V2RAY                        ${NC}"
-    echo -e "${COL_HEADER}  [5] > WEBSOCKET                    ${NC}"
-    echo -e "${COL_HEADER}  [6] > BADVPN-UDP                   ${NC}"
-    echo -e "${COL_HEADER}  [7] > SQUID                        ${NC}"
-    echo -e "${COL_HEADER}  [8] > OPENVPN                      ${NC}"
-    echo -e "${COL_HEADER}  [9] > SLOWDNS                      ${NC}"
-    echo -e "${COL_HEADER}  [10] > WIREGUARD                   ${NC}"
-    echo -e "${COL_HEADER}  [11] > PROTOCOLOS UDP              ${NC}"
-    echo -e "${COL_HEADER}  [12] > PSIPHON                     ${NC}"
-    echo -e "${COL_HEADER}  [13] > WS-EPRO                     ${NC}"
+    echo -e "${COL_HEADER}  [1] > PREPARAR PROTOCOLOS          ${NC}"
+    echo -e "${COL_HEADER}  [2] > DROPBEAR                     ${NC}"
+    echo -e "${COL_HEADER}  [3] > SOCKS PYTHON                 ${NC}"
+    echo -e "${COL_HEADER}  [4] > SSL                          ${NC}"
+    echo -e "${COL_HEADER}  [5] > V2RAY                        ${NC}"
+    echo -e "${COL_HEADER}  [6] > WEBSOCKET                    ${NC}"
+    echo -e "${COL_HEADER}  [7] > BADVPN-UDP                   ${NC}"
+    echo -e "${COL_HEADER}  [8] > SQUID                        ${NC}"
+    echo -e "${COL_HEADER}  [9] > OPENVPN                      ${NC}"
+    echo -e "${COL_HEADER}  [10] > SLOWDNS                      ${NC}"
+    echo -e "${COL_HEADER}  [11] > WIREGUARD                   ${NC}"
+    echo -e "${COL_HEADER}  [12] > PROTOCOLOS UDP              ${NC}"
+    echo -e "${COL_HEADER}  [13] > PSIPHON                     ${NC}"
+    echo -e "${COL_HEADER}  [14] > WS-EPRO                     ${NC}"
     echo -e "${COL_ERROR}  [0] > VOLVER                       ${NC}"
     echo -e "${COL_WHITE}====================================${NC}"
     echo -n "Seleccione una opción: "
@@ -46,25 +52,19 @@ menu_conexiones() {
 
     case $opcion in
         0) exit 0 ;;  # Salir del script
-        1) 
-            echo "Ejecutando chmod +x en dropbear.sh"
-            chmod +x /root/FibersTV/conexiones/dropbear/dropbear.sh
-            echo "Permisos después de chmod:"
-            ls -l /root/FibersTV/conexiones/dropbear/dropbear.sh
-            /root/FibersTV/conexiones/dropbear/dropbear.sh
-            ;;
-        2) chmod +x /root/FibersTV/conexiones/socks_python/socks_python.sh && /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
-        3) chmod +x /root/FibersTV/conexiones/ssl/ssl.sh && /root/FibersTV/conexiones/ssl/ssl.sh ;;
-        4) chmod +x /root/FibersTV/conexiones/v2ray/v2ray.sh && /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
-        5) chmod +x /root/FibersTV/conexiones/websocket/websocket.sh && /root/FibersTV/conexiones/websocket/websocket.sh ;;
-        6) chmod +x /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh && /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh ;;
-        7) chmod +x /root/FibersTV/conexiones/squid/squid.sh && /root/FibersTV/conexiones/squid/squid.sh ;;
-        8) chmod +x /root/FibersTV/conexiones/openvpn/openvpn.sh && /root/FibersTV/conexiones/openvpn/openvpn.sh ;;
-        9) chmod +x /root/FibersTV/conexiones/slowdns/slowdns.sh && /root/FibersTV/conexiones/slowdns/slowdns.sh ;;
-        10) chmod +x /root/FibersTV/conexiones/wireguard/wireguard.sh && /root/FibersTV/conexiones/wireguard/wireguard.sh ;;
-        11) chmod +x /root/FibersTV/conexiones/udp/udp.sh && /root/FibersTV/conexiones/udp/udp.sh ;;
-        12) chmod +x /root/FibersTV/conexiones/psiphon/psiphon.sh && /root/FibersTV/conexiones/psiphon/psiphon.sh ;;
-        13) chmod +x /root/FibersTV/conexiones/ws_epro/ws_epro.sh && /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
+        1) preparar_protocolos ;;  # Preparar protocolos
+        2) /root/FibersTV/conexiones/dropbear/dropbear.sh ;;
+        3) /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
+        4) /root/FibersTV/conexiones/ssl/ssl.sh ;;
+        5) /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
+        6) /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh ;;
+        7) /root/FibersTV/conexiones/squid/squid.sh ;;
+        8) /root/FibersTV/conexiones/openvpn/openvpn.sh ;;
+        9) /root/FibersTV/conexiones/slowdns/slowdns.sh ;;
+        10) /root/FibersTV/conexiones/wireguard/wireguard.sh ;;
+        11) /root/FibersTV/conexiones/udp/udp.sh ;;
+        12) /root/FibersTV/conexiones/psiphon/psiphon.sh ;;
+        13) /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
         *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
     esac
 
