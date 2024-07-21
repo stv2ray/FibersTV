@@ -1,8 +1,14 @@
 #!/bin/bash
 
-# Definición de colores
-HEADER_COLOR='\e[38;5;69m'  # #6F4BFO
-OPTION_COLOR='\e[38;5;69m'  # #6F4BFO
+# Definir colores
+COL_BANNER1="\e[38;5;69m"   # #6F4BFO
+COL_BANNER2="\e[38;5;117m"  # #CED4F5
+COL_BANNER3="\e[38;5;33m"   # #006BFA
+COL_BANNER4="\e[38;5;119m"  # #EAFFF8
+COL_HEADER="\e[38;5;69m"    # #6F4BFO
+COL_MENU="\e[38;5;69m"      # #6F4BFO
+COL_TEXT="\e[38;5;69m"      # #6F4BFO
+COL_ERROR="\e[38;5;196m"    # Rojo
 NC='\e[0m'                  # Sin color
 
 # Función para mostrar los puertos activos
@@ -14,28 +20,28 @@ mostrar_puertos() {
 menu_conexiones() {
     while true; do
         clear
-        echo -e "${HEADER_COLOR}══════════════════════════════════════════════════════════════════════════════════${NC}"
-        echo -e "${HEADER_COLOR}                            PUERTOS ACTIVOS${NC}"
-        echo -e "${HEADER_COLOR}══════════════════════════════════════════════════════════════════════════════════${NC}"
+        echo -e "${COL_HEADER}══════════════════════════════════════════════════════════════════════════════════${NC}"
+        echo -e "${COL_HEADER}                            PUERTOS ACTIVOS${NC}"
+        echo -e "${COL_HEADER}══════════════════════════════════════════════════════════════════════════════════${NC}"
         mostrar_puertos
         echo
-        echo -e "${HEADER_COLOR}                      MENU DE PROTOCOLOS                      ${NC}"
-        echo -e "${HEADER_COLOR}  [1] > DROPBEAR                              ${NC}"
-        echo -e "${HEADER_COLOR}  [2] > SOCKS PYTHON                          ${NC}"
-        echo -e "${HEADER_COLOR}  [3] > SSL                                  ${NC}"
-        echo -e "${HEADER_COLOR}  [4] > V2RAY                                ${NC}"
-        echo -e "${HEADER_COLOR}  [5] > WEBSOCKET                            ${NC}"
-        echo -e "${HEADER_COLOR}  [6] > BADVPN-UDP                           ${NC}"
-        echo -e "${HEADER_COLOR}  [7] > SQUID                                ${NC}"
-        echo -e "${HEADER_COLOR}  [8] > OPENVPN                              ${NC}"
-        echo -e "${HEADER_COLOR}  [9] > SLOWDNS                              ${NC}"
-        echo -e "${HEADER_COLOR}  [10] > WIREGUARD                           ${NC}"
-        echo -e "${HEADER_COLOR}  [11] > PROTOCOLOS UDP                      ${NC}"
-        echo -e "${HEADER_COLOR}  [12] > PSIPHON                             ${NC}"
-        echo -e "${HEADER_COLOR}  [13] > WS-EPRO                             ${NC}"
+        echo -e "${COL_HEADER}                      MENU DE PROTOCOLOS                      ${NC}"
+        echo -e "${COL_HEADER}  [1] > DROPBEAR                              ${NC}"
+        echo -e "${COL_HEADER}  [2] > SOCKS PYTHON                          ${NC}"
+        echo -e "${COL_HEADER}  [3] > SSL                                  ${NC}"
+        echo -e "${COL_HEADER}  [4] > V2RAY                                ${NC}"
+        echo -e "${COL_HEADER}  [5] > WEBSOCKET                            ${NC}"
+        echo -e "${COL_HEADER}  [6] > BADVPN-UDP                           ${NC}"
+        echo -e "${COL_HEADER}  [7] > SQUID                                ${NC}"
+        echo -e "${COL_HEADER}  [8] > OPENVPN                              ${NC}"
+        echo -e "${COL_HEADER}  [9] > SLOWDNS                              ${NC}"
+        echo -e "${COL_HEADER}  [10] > WIREGUARD                           ${NC}"
+        echo -e "${COL_HEADER}  [11] > PROTOCOLOS UDP                      ${NC}"
+        echo -e "${COL_HEADER}  [12] > PSIPHON                             ${NC}"
+        echo -e "${COL_HEADER}  [13] > WS-EPRO                             ${NC}"
         echo
-        echo -e "${HEADER_COLOR}══════════════════════════════════════════════════════════════════════════════════${NC}"
-        echo -e "${OPTION_COLOR}[0] > VOLVER${NC}"
+        echo -e "${COL_HEADER}══════════════════════════════════════════════════════════════════════════════════${NC}"
+        echo -e "${COL_MENU}[0] > VOLVER${NC}"
         echo -n "Seleccione una opción: "
         read opcion
 
@@ -54,7 +60,7 @@ menu_conexiones() {
             11) ./udp.sh ;;
             12) ./psiphon.sh ;;
             13) ./ws_epro.sh ;;
-            *) echo -e "${RED}Opción inválida${NC}"; sleep 2 ;;
+            *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
         esac
     done
 }
