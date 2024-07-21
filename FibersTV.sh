@@ -14,9 +14,9 @@ NC='\e[0m'                  # Sin color
 # Función para mostrar el banner con degradado
 mostrar_banner() {
     clear
-    echo -e "${COL_BANNER4}********************************"
-    echo -e "${COL_BANNER3}*        ${NC}FIBERSTV.COM         *${NC}"
-    echo -e "${COL_BANNER2}********************************"
+    echo -e "********************************"
+    echo -e "${COL_BANNER3}*        ${NC}${COL_BANNER2}FIBERSTV.COM${NC}${COL_BANNER3}         *${NC}"
+    echo -e "********************************"
     echo -e "${COL_BANNER1}********************************${NC}"
 }
 
@@ -31,7 +31,7 @@ mostrar_info_sistema() {
 menu_principal() {
     mostrar_banner
     mostrar_info_sistema
-    echo -e "${COL_HEADER}PANEL DE CONTROL"
+    echo -e "PANEL DE CONTROL"
     echo -e "${COL_MENU}1) CUENTAS${NC}"
     echo -e "${COL_MENU}2) CONEXIONES${NC}"
     echo -e "${COL_MENU}3) HERRAMIENTAS${NC}"
