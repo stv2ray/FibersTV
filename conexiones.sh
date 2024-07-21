@@ -4,8 +4,6 @@
 HEADER_COLOR='\e[38;5;105m'  # #6F4BFO
 OPTION_COLOR='\e[38;5;39m'   # #006BFA
 NC='\e[0m'                   # Sin color
-BOX_COLOR='\e[48;5;250m'     # Fondo de caja
-BOX_TEXT_COLOR='\e[38;5;0m'  # Texto dentro de la caja
 
 # Función para mostrar los puertos activos
 mostrar_puertos() {
@@ -21,20 +19,20 @@ menu_conexiones() {
         echo -e "${HEADER_COLOR}══════════════════════════════════════════════════════════════════════════════════${NC}"
         mostrar_puertos
         echo
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}                      MENU DE PROTOCOLOS                      ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [1] > DROPBEAR                              ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [2] > SOCKS PYTHON                          ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [3] > SSL                                  ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [4] > V2RAY                                ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [5] > WEBSOCKET                            ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [6] > BADVPN-UDP                           ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [7] > SQUID                                ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [8] > OPENVPN                              ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [9] > SLOWDNS                              ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [10] > WIREGUARD                           ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [11] > PROTOCOLOS UDP                      ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [12] > PSIPHON                             ${NC}"
-        echo -e "${BOX_COLOR}${BOX_TEXT_COLOR}  [13] > WS-EPRO                             ${NC}"
+        echo -e "${HEADER_COLOR}                      MENU DE PROTOCOLOS                      ${NC}"
+        echo -e "${HEADER_COLOR}  [1] > DROPBEAR                              ${NC}"
+        echo -e "${HEADER_COLOR}  [2] > SOCKS PYTHON                          ${NC}"
+        echo -e "${HEADER_COLOR}  [3] > SSL                                  ${NC}"
+        echo -e "${HEADER_COLOR}  [4] > V2RAY                                ${NC}"
+        echo -e "${HEADER_COLOR}  [5] > WEBSOCKET                            ${NC}"
+        echo -e "${HEADER_COLOR}  [6] > BADVPN-UDP                           ${NC}"
+        echo -e "${HEADER_COLOR}  [7] > SQUID                                ${NC}"
+        echo -e "${HEADER_COLOR}  [8] > OPENVPN                              ${NC}"
+        echo -e "${HEADER_COLOR}  [9] > SLOWDNS                              ${NC}"
+        echo -e "${HEADER_COLOR}  [10] > WIREGUARD                           ${NC}"
+        echo -e "${HEADER_COLOR}  [11] > PROTOCOLOS UDP                      ${NC}"
+        echo -e "${HEADER_COLOR}  [12] > PSIPHON                             ${NC}"
+        echo -e "${HEADER_COLOR}  [13] > WS-EPRO                             ${NC}"
         echo
         echo -e "${HEADER_COLOR}══════════════════════════════════════════════════════════════════════════════════${NC}"
         echo -e "${OPTION_COLOR}[0] > VOLVER${NC}"
