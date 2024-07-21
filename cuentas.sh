@@ -13,6 +13,10 @@ NC='\e[0m'                 # Sin color
 LIMITS_FILE="/root/FibersTV/limits.conf"
 PASSWORD_FILE="/root/FibersTV/passwords.txt"
 
+# Crear archivos si no existen
+[ ! -f "$LIMITS_FILE" ] && touch "$LIMITS_FILE" && echo "LIMITADOR=10" >> "$LIMITS_FILE"
+[ ! -f "$PASSWORD_FILE" ] && touch "$PASSWORD_FILE"
+
 # Función para mostrar el menú de cuentas
 menu_cuentas() {
     while true; do
