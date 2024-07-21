@@ -54,7 +54,6 @@ instalar_dropbear() {
     echo -e "${COL_TEXT}Dropbear instalado y configurado.${NC}"
     sudo ufw allow 22/tcp
     sleep 2
-    menu_dropbear
 }
 
 # Función para redefinir puertos de Dropbear
@@ -66,7 +65,6 @@ redefinir_puertos_dropbear() {
     sudo ufw allow $puerto/tcp
     echo -e "${COL_TEXT}Dropbear configurado para escuchar en el puerto $puerto.${NC}"
     sleep 2
-    menu_dropbear
 }
 
 # Función para mostrar el estado del servicio Dropbear
@@ -74,7 +72,6 @@ estado_servicio_dropbear() {
     sudo systemctl status dropbear
     echo "Presione cualquier tecla para volver."
     read -n 1
-    menu_dropbear
 }
 
 # Función para reiniciar Dropbear
@@ -82,7 +79,6 @@ reiniciar_dropbear() {
     sudo systemctl restart dropbear
     echo -e "${COL_TEXT}Dropbear reiniciado.${NC}"
     sleep 2
-    menu_dropbear
 }
 
 # Función para iniciar o detener el servicio Dropbear
@@ -96,7 +92,6 @@ iniciar_detener_dropbear() {
         echo -e "${COL_TEXT}Dropbear iniciado.${NC}"
     fi
     sleep 2
-    menu_dropbear
 }
 
 # Función para desinstalar Dropbear
@@ -106,7 +101,6 @@ desinstalar_dropbear() {
     sudo ufw delete allow 22/tcp
     echo -e "${COL_TEXT}Dropbear desinstalado.${NC}"
     sleep 2
-    menu_dropbear
 }
 
 # Llamar al menú de Dropbear
