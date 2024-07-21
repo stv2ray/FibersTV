@@ -4,9 +4,9 @@
 source ./FibersTV.sh
 
 # Definición de colores
-HEADER_COLOR='\e[38;5;105m'  # #6F4BFO
-OPTION_COLOR='\e[38;5;39m'   # #006BFA
-NC='\e[0m'                   # Sin color
+HEADER_COLOR='\e[38;5;69m'  # #6F4BFO
+OPTION_COLOR='\e[38;5;69m'  # #6F4BFO
+NC='\e[0m'                  # Sin color
 
 # Función para mostrar los puertos activos
 mostrar_puertos() {
