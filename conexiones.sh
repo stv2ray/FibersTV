@@ -40,7 +40,7 @@ menu_conexiones() {
         echo -e "${COL_HEADER}  [11] > PROTOCOLOS UDP              ${NC}"
         echo -e "${COL_HEADER}  [12] > PSIPHON                     ${NC}"
         echo -e "${COL_HEADER}  [13] > WS-EPRO                     ${NC}"
-        echo -e "${COL_HEADER}  [0] > VOLVER                       ${NC}"
+        echo -e "${COL_ERROR}  [0] > VOLVER                       ${NC}"
         echo -e "${COL_WHITE}====================================${NC}"
         echo -n "Seleccione una opción: "
         read opcion
