@@ -38,7 +38,7 @@ menu_principal() {
     echo -e "${COL_MENU}4) BACKUP${NC}"
     echo -e "${COL_MENU}5) ACTUALIZAR${NC}"
     echo -e "${COL_MENU}6) DESINSTALAR${NC}"
-    echo -e "${COL_MENU}0) SALIR DEL SCRIPT${NC}"
+    echo -e "${COL_ERROR}0) SALIR DEL SCRIPT${NC}"
     echo -n "Seleccione una opción: "
     read opcion
 
