@@ -207,14 +207,8 @@ backup_usuarios() {
     sleep 2
 }
 
-# Función principal del menú de cuentas
-menu_principal() {
-    # Aquí debes definir el menú principal, si aún no está definido.
-    echo "Volviendo al menú principal..."
-    sleep 2
-    # Por ejemplo:
-    # source /root/FibersTV/FibersTV.sh
+# menu_principal() {
+    # Aquí debes definir cómo volver al menú principal
+    # Si está en el mismo archivo, puedes simplemente llamar a la función
+    /root/FibersTV/FibersTV.sh
 }
-
-# Llamar a la función del menú de cuentas para iniciar
-menu_cuenta
