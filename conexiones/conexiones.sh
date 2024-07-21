@@ -19,6 +19,7 @@ mostrar_puertos() {
 
 # Función para dar permisos de ejecución a todos los protocolos
 preparar_protocolos() {
+    chmod +x ~/FibersTV/conexiones/chmod_protocol.sh
     ~/FibersTV/conexiones/chmod_protocol.sh
 }
 
