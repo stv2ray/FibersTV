@@ -1,29 +1,23 @@
 #!/bin/bash
 
-# Definir colores para el degradado
-COL_BANNER1="\e[38;5;231m"  # Blanco
-COL_BANNER2="\e[38;5;159m"  # Cian
-COL_BANNER3="\e[38;5;123m"  # Azul
-COL_BANNER4="\e[38;5;87m"   # Azul cristalino
-COL_BANNER5="\e[38;5;51m"   # Verde cristalino
-COL_BANNER6="\e[38;5;47m"   # Verde más oscuro
-COL_BANNER7="\e[38;5;22m"   # Verde oscuro
-COL_HEADER="\e[38;5;82m"    # Verde claro
-COL_MENU="\e[38;5;82m"      # Verde claro
-COL_TEXT="\e[38;5;82m"      # Verde claro
+# Definir colores
+COL_BANNER1="\e[38;5;69m"   # #6F4BFO
+COL_BANNER2="\e[38;5;123m"  # #CED4F5
+COL_BANNER3="\e[38;5;33m"   # #006BFA
+COL_BANNER4="\e[38;5;119m"  # #EAFFF8
+COL_HEADER="\e[38;5;69m"    # #6F4BFO
+COL_MENU="\e[38;5;69m"      # #6F4BFO
+COL_TEXT="\e[38;5;69m"      # #6F4BFO
 COL_ERROR="\e[38;5;196m"    # Rojo
 NC='\e[0m'                  # Sin color
 
 # Función para mostrar el banner con degradado
 mostrar_banner() {
     clear
-    echo -e "${COL_BANNER1}********************************${NC}"
-    echo -e "${COL_BANNER2}*        ${COL_BANNER1}FIBERSTV.COM${COL_BANNER2}         *${NC}"
-    echo -e "${COL_BANNER3}********************************${NC}"
     echo -e "${COL_BANNER4}********************************${NC}"
-    echo -e "${COL_BANNER5}********************************${NC}"
-    echo -e "${COL_BANNER6}********************************${NC}"
-    echo -e "${COL_BANNER7}********************************${NC}"
+    echo -e "${COL_BANNER3}*        ${COL_BANNER4}FIBERSTV.COM${COL_BANNER3}         *${NC}"
+    echo -e "${COL_BANNER2}********************************${NC}"
+    echo -e "${COL_BANNER1}********************************${NC}"
 }
 
 # Función para mostrar la información del sistema
@@ -38,13 +32,13 @@ menu_principal() {
     mostrar_banner
     mostrar_info_sistema
     echo -e "${COL_HEADER}PANEL DE CONTROL${NC}"
-    echo -e "1) ${COL_MENU}CUENTAS${NC}"
-    echo -e "2) ${COL_MENU}CONEXIONES${NC}"
-    echo -e "3) ${COL_MENU}HERRAMIENTAS${NC}"
-    echo -e "4) ${COL_MENU}BACKUP${NC}"
-    echo -e "5) ${COL_MENU}ACTUALIZAR${NC}"
-    echo -e "6) ${COL_MENU}DESINSTALAR${NC}"
-    echo -e "0) ${COL_MENU}SALIR DEL SCRIPT${NC}"
+    echo -e "${COL_MENU}1) CUENTAS${NC}"
+    echo -e "${COL_MENU}2) CONEXIONES${NC}"
+    echo -e "${COL_MENU}3) HERRAMIENTAS${NC}"
+    echo -e "${COL_MENU}4) BACKUP${NC}"
+    echo -e "${COL_MENU}5) ACTUALIZAR${NC}"
+    echo -e "${COL_MENU}6) DESINSTALAR${NC}"
+    echo -e "${COL_MENU}0) SALIR DEL SCRIPT${NC}"
     echo -n "Seleccione una opción: "
     read opcion
 
