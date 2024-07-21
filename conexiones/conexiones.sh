@@ -47,7 +47,7 @@ menu_conexiones() {
 
         case $opcion in
             0) break ;;  # Salir del bucle para volver al menú principal
-            1) chmod +x /root/FibersTV/conexiones/dropbear/dropbear.sh && /root/FibersTV/conexiones/dropbear/dropbear.sh ;;
+            1) chmod +x /root/FibersTV/conexiones/dropbear.sh && ./dropbear.sh ;;
             2) chmod +x /root/FibersTV/conexiones/socks_python/socks_python.sh && /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
             3) chmod +x /root/FibersTV/conexiones/ssl/ssl.sh && /root/FibersTV/conexiones/ssl/ssl.sh ;;
             4) chmod +x /root/FibersTV/conexiones/v2ray/v2ray.sh && /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
