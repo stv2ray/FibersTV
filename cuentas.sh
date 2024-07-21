@@ -24,9 +24,9 @@ menu_cuentas() {
     while true; do
         clear
         LIMITADOR=$(grep "LIMITADOR" "$LIMITS_FILE" | cut -d'=' -f2)
-        echo -e "${COL_BANNER2}====================================${NC}"
-        echo -e "${COL_BANNER3}           MENÚ DE CUENTAS          ${NC}"
-        echo -e "${COL_BANNER2}====================================${NC}"
+        echo -e "===================================="
+        echo -e "${COL_BANNER2}           MENÚ DE CUENTAS          ${NC}"
+        echo -e "===================================="
         echo -e "${COL_MENU}[1] > NUEVO USUARIO SSH${NC}"
         echo -e "${COL_MENU}[2] > REMOVER USUARIO${NC}"
         echo -e "${COL_MENU}[3] > EDITAR USUARIO${NC}"
@@ -35,7 +35,7 @@ menu_cuentas() {
         echo -e "${COL_MENU}[6] > LIMITADOR-DE-CUENTAS [$LIMITADOR]${NC}"
         echo -e "${COL_MENU}[7] > BACKUP USUARIOS${NC}"
         echo -e "${COL_ERROR}[0] > VOLVER${NC}"
-        echo -e "${COL_BANNER2}====================================${NC}"
+        echo -e "===================================="
         echo -n "Seleccione una opción: "
         read opcion
 
