@@ -9,7 +9,7 @@ BOX_TEXT_COLOR='\e[38;5;0m'  # Texto dentro de la caja
 
 # Función para mostrar los puertos activos
 mostrar_puertos() {
-    /root/FibersTV/conexiones/puertos.sh
+    ./puertos.sh
 }
 
 # Función para mostrar el menú de conexiones
@@ -43,19 +43,19 @@ menu_conexiones() {
 
         case $opcion in
             0) menu_principal ;;  # Asegúrate de tener esta función definida en tu menú principal
-            1) /root/FibersTV/conexiones/dropbear/dropbear.sh ;;
-            2) /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
-            3) /root/FibersTV/conexiones/ssl/ssl.sh ;;
-            4) /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
-            5) /root/FibersTV/conexiones/websocket/websocket.sh ;;
-            6) /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh ;;
-            7) /root/FibersTV/conexiones/squid/squid.sh ;;
-            8) /root/FibersTV/conexiones/openvpn/openvpn.sh ;;
-            9) /root/FibersTV/conexiones/slowdns/slowdns.sh ;;
-            10) /root/FibersTV/conexiones/wireguard/wireguard.sh ;;
-            11) /root/FibersTV/conexiones/udp/udp.sh ;;
-            12) /root/FibersTV/conexiones/psiphon/psiphon.sh ;;
-            13) /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
+            1) ./dropbear.sh ;;
+            2) ./socks_python.sh ;;
+            3) ./ssl.sh ;;
+            4) ./v2ray.sh ;;
+            5) ./websocket.sh ;;
+            6) ./badvpn_udp.sh ;;
+            7) ./squid.sh ;;
+            8) ./openvpn.sh ;;
+            9) ./slowdns.sh ;;
+            10) ./wireguard.sh ;;
+            11) ./udp.sh ;;
+            12) ./psiphon.sh ;;
+            13) ./ws_epro.sh ;;
             *) echo -e "${RED}Opción inválida${NC}"; sleep 2 ;;
         esac
     done
