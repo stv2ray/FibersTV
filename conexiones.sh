@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Incluir el script principal para acceder a la función menu_principal
+source ./FibersTV.sh
+
 # Definición de colores
 HEADER_COLOR='\e[38;5;105m'  # #6F4BFO
 OPTION_COLOR='\e[38;5;39m'   # #006BFA
