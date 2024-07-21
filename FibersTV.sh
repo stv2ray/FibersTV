@@ -43,7 +43,7 @@ menu_principal() {
     read opcion
 
     case $opcion in
-        1) ./cuentas.sh ;;
+        1) chmod +x cuentas/cuentas.sh && ./cuentas/cuentas.sh ;;
         2) ./conexiones.sh ;;
         3) ./herramientas.sh ;;
         4) ./backup.sh ;;
