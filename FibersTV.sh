@@ -67,6 +67,4 @@ menu_principal() {
 }
 
 # Bucle para mantener el menú principal activo
-while true; do
-    menu_principal
-done
+menu_principal
