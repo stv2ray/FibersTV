@@ -38,7 +38,7 @@ menu_principal() {
     read opcion
 
     case $opcion in
-        1) ./cuentas/cuentas.sh ;;
+        1) ./usuarios/cuentas.sh ;;
         2) ./conexiones/conexiones.sh ;;
         3) ./herramientas/herramientas.sh ;;
         4) ./backup/backup.sh ;;
