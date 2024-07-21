@@ -38,33 +38,18 @@ menu_principal() {
     read opcion
 
     case $opcion in
-        1) 
-            /root/FibersTV/usuarios/cuentas.sh
-            ;;
-        2) 
-            ./conexiones.sh
-            ;;
-        3) 
-            /root/FibersTV/herramientas/herramientas.sh
-            ;;
-        4) 
-            /root/FibersTV/backup/backup.sh
-            ;;
-        5) 
-            /root/FibersTV/actualizar/actualizar.sh
-            ;;
-        6) 
-            /root/FibersTV/desinstalar/desinstalar.sh
-            ;;
-        0) 
-            exit
-            ;;
-        *) 
-            echo -e "\e[38;5;9mOpción inválida\e[0m"
-            sleep 2
-            ;;
+        1) ./cuentas.sh ;;
+        2) ./conexiones.sh ;;
+        3) ./herramientas.sh ;;
+        4) ./backup.sh ;;
+        5) ./actualizar.sh ;;
+        6) ./desinstalar.sh ;;
+        0) exit ;;
+        *) echo -e "\e[38;5;9mOpción inválida\e[0m"; sleep 2 ;;
     esac
 }
 
 # Bucle para mantener el menú principal activo
-menu_principal
+while true; do
+    menu_principal
+done
