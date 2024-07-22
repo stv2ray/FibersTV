@@ -46,13 +46,34 @@ menu_dropbear() {
 
 # Función para instalar Dropbear
 instalar_dropbear() {
+    echo -n "Ingrese el puerto para Dropbear: "
+    read puerto_escucha
+    echo -n "Ingrese el puerto de redirección (por ejemplo, 22 para OpenSSH): "
+    read puerto_redireccion
     sudo apt-get update
     sudo apt-get install -y dropbear
     sudo sed -i "s/NO_START=1/NO_START=0/" /etc/default/dropbear
+    sudo sed -i "s/DROPBEAR_PORT=.*/DROPBEAR_PORT=$puerto_escucha/" /etc/default/dropbear
+    sudo sed -i "s|DROPBEAR_EXTRA_ARGS=.*|DROPBEAR_EXTRA_ARGS=\"\"|" /etc/default/dropbear
+    # Generar claves SSH si no existen
+    if [ ! -f /etc/dropbear/dropbear_rsa_host_key ]; then
+        sudo dropbearkey -t rsa -f /etc/dropbear/dropbear_rsa_host_key
+        sudo chmod 600 /etc/dropbear/dropbear_rsa_host_key
+    fi
+    if [ ! -f /etc/dropbear/dropbear_dss_host_key ]; then
+        sudo dropbearkey -t dss -f /etc/dropbear/dropbear_dss_host_key
+        sudo chmod 600 /etc/dropbear/dropbear_dss_host_key
+    fi
+    if [ ! -f /etc/dropbear/dropbear_ecdsa_host_key ]; then
+        sudo dropbearkey -t ecdsa -f /etc/dropbear/dropbear_ecdsa_host_key
+        sudo chmod 600 /etc/dropbear/dropbear_ecdsa_host_key
+    fi
     sudo systemctl enable dropbear
     sudo systemctl start dropbear
-    echo -e "${COL_TEXT}Dropbear instalado y configurado.${NC}"
-    sudo ufw allow 22/tcp
+    sudo ufw allow $puerto_escucha/tcp
+    sudo ufw allow $puerto_redireccion/tcp
+    echo -e "${COL_TEXT}Dropbear instalado y configurado para escuchar en el puerto $puerto_escucha y redirigir al puerto $puerto_redireccion.${NC}"
+    sudo systemctl restart dropbear
     sleep 2
     menu_dropbear
 }
@@ -60,11 +81,15 @@ instalar_dropbear() {
 # Función para redefinir puertos de Dropbear
 redefinir_puertos_dropbear() {
     echo -n "Ingrese el puerto para Dropbear: "
-    read puerto
-    sudo sed -i "s/DROPBEAR_PORT=.*/DROPBEAR_PORT=$puerto/" /etc/default/dropbear
+    read puerto_escucha
+    echo -n "Ingrese el puerto de redirección (por ejemplo, 22 para OpenSSH): "
+    read puerto_redireccion
+    sudo sed -i "s/DROPBEAR_PORT=.*/DROPBEAR_PORT=$puerto_escucha/" /etc/default/dropbear
+    sudo sed -i "s|DROPBEAR_EXTRA_ARGS=.*|DROPBEAR_EXTRA_ARGS=\"\"|" /etc/default/dropbear
     sudo systemctl restart dropbear
-    sudo ufw allow $puerto/tcp
-    echo -e "${COL_TEXT}Dropbear configurado para escuchar en el puerto $puerto.${NC}"
+    sudo ufw allow $puerto_escucha/tcp
+    sudo ufw allow $puerto_redireccion/tcp
+    echo -e "${COL_TEXT}Dropbear configurado para escuchar en el puerto $puerto_escucha y redirigir al puerto $puerto_redireccion.${NC}"
     sleep 2
     menu_dropbear
 }
