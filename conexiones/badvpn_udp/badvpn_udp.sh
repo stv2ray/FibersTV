@@ -51,11 +51,11 @@ instalar_badvpn() {
     sudo apt install -y build-essential cmake git
 
     # Clonar el repositorio de BadVPN
-    git clone https://github.com/ambrop72/badvpn.git
+    git clone https://github.com/ambrop72/badvpn.git || true
 
     # Crear un directorio de compilación
     cd badvpn
-    mkdir build
+    mkdir -p build
     cd build
 
     # Configurar el proyecto con CMake
@@ -71,7 +71,7 @@ instalar_badvpn() {
     badvpn-udpgw --help
 
     # Configurar el servicio de BadVPN
-    sudo bash -c 'cat <<EOF > /etc/systemd/system/badvpn.service
+    sudo bash -c "cat <<EOF > /etc/systemd/system/badvpn.service
 [Unit]
 Description=BadVPN UDP Gateway
 After=network.target
@@ -85,7 +85,7 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-EOF'
+EOF"
 
     # Recargar systemd y arrancar el servicio
     sudo systemctl daemon-reload
