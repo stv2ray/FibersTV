@@ -81,12 +81,14 @@ ExecStart=/usr/local/bin/badvpn-udpgw --listen-addr 0.0.0.0:$puerto_escucha
 User=nobody
 Group=nogroup
 Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
 EOF'
 
-    # Habilitar y arrancar el servicio
+    # Recargar systemd y arrancar el servicio
+    sudo systemctl daemon-reload
     sudo systemctl enable badvpn
     sudo systemctl start badvpn
 
@@ -153,5 +155,5 @@ desinstalar_badvpn() {
     menu_badvpn_udp
 }
 
-# Iniciar el menu badvpn_udp
+# Función para el menú principal de conexiones
 menu_badvpn_udp
