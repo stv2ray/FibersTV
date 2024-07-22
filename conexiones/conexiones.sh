@@ -58,14 +58,15 @@ menu_conexiones() {
         3) /root/FibersTV/conexiones/socks_python/socks_python.sh ;;
         4) /root/FibersTV/conexiones/ssl/ssl.sh ;;
         5) /root/FibersTV/conexiones/v2ray/v2ray.sh ;;
-        6) /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh ;;
-        7) /root/FibersTV/conexiones/squid/squid.sh ;;
-        8) /root/FibersTV/conexiones/openvpn/openvpn.sh ;;
-        9) /root/FibersTV/conexiones/slowdns/slowdns.sh ;;
-        10) /root/FibersTV/conexiones/wireguard/wireguard.sh ;;
-        11) /root/FibersTV/conexiones/udp/udp.sh ;;
-        12) /root/FibersTV/conexiones/psiphon/psiphon.sh ;;
-        13) /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
+        6) /root/FibersTV/conexiones/websocket/websocket.sh ;;  # Llamada al archivo WebSocket
+        7) /root/FibersTV/conexiones/badvpn_udp/badvpn_udp.sh ;;
+        8) /root/FibersTV/conexiones/squid/squid.sh ;;
+        9) /root/FibersTV/conexiones/openvpn/openvpn.sh ;;
+        10) /root/FibersTV/conexiones/slowdns/slowdns.sh ;;
+        11) /root/FibersTV/conexiones/wireguard/wireguard.sh ;;
+        12) /root/FibersTV/conexiones/udp/udp.sh ;;
+        13) /root/FibersTV/conexiones/psiphon/psiphon.sh ;;
+        14) /root/FibersTV/conexiones/ws_epro/ws_epro.sh ;;
         *) echo -e "${COL_ERROR}Opción inválida${NC}"; sleep 2 ;;
     esac
 
